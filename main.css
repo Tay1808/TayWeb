@@ -25,3 +25,23 @@ header {
 a {
     text-decoration: none
 }
+a:link {
+    color: rgb(14, 53, 100);
+    text-decoration: underline;
+}
+a:visited {
+    color: rgb(59, 146, 252);
+    text-shadow: 5px 5px 8px rgb(2, 8, 55);
+    font-weight: bold;
+    text-decoration: underline;
+}
+a:hover {
+    color: rgb(15, 21, 195);
+    text-shadow: 5px 5px 8px rgb(0, 200, 255);
+    font-weight: bold;
+    text-decoration: underline;
+}
+a:active {
+    color: black;
+    opacity: 0.3;
+}
