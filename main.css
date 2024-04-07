@@ -23,7 +23,9 @@ header {
     margin: 10px;
 }
 a {
-    text-decoration: none
+    color: green(3, 183, 168);
+    text-decoration: none;
+    transition: 1s 2S;
 }
 a:link {
     color: rgb(14, 53, 100);
@@ -40,6 +42,7 @@ a:hover {
     text-shadow: 5px 5px 8px rgb(0, 200, 255);
     font-weight: bold;
     text-decoration: underline;
+    transition: 0.3s;
 }
 a:active {
     color: black;
