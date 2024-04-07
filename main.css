@@ -45,6 +45,22 @@ a:hover {
     transition: 0.3s;
 }
 a:active {
-    color: black;
+    color: rgb(244, 19, 94);
     opacity: 0.3;
+}
+div.menu { 
+    border: 5px solid #1d008880; 
+    border-radius: 5px;
+    width: 450px;
+    margin: 0 auto;
+    background-color: #1e64fb30;
+}
+div.menu:hover {
+    background-color: #ed0f7370;
+    box-shadow: 0 0 20px #f91b9180;
+    border-radius: 30px;
+}
+div.zagolovok {
+    text-align: center;
+    text-shadow: 0 5px 20px #05266c70;
 }
