@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Лоринец Татьяна Андреевна. Лабораторная работа 4.</title>
+    <link rel="stylesheet" href="../main.css">
+    <link rel="shortcut icon" href="C:\Users\Tay\OneDrive\Рабочий стол\Tay\уник\2 курс\4сем\вебка\favicon_io\favicon.ico" type="image/x-icon">
+    <link rel="icon" href="C:\Users\Tay\OneDrive\Рабочий стол\Tay\уник\2 курс\4сем\вебка\favicon_io\favicon-16x16.png">
+    <link rel="ionc" href="C:\Users\Tay\OneDrive\Рабочий стол\Tay\уник\2 курс\4сем\вебка\favicon_io\favicon-32x32.png">
+    <style>
+        div {
+            width: 300px;
+            height: 70px;
+            line-height: 70px;
+            text-align: center;
+            background-color: pink;
+            border: 1px dotted rgb(236, 15, 78);
+            margin: 15px; 
+        }
+        .position-relative {
+            position: relative;
+            left: 160px;
+            top: -127px;
+            z-index: -1;
+        }
+
+        .position-relative:hover {
+            z-index: 1;
+        }
+        
+        .position-absolute {
+            position: absolute;
+            left: 300px;
+        }
+
+        .position-absolute:hover {
+            background-color: rgb(255, 0, 111);
+            box-shadow: 7px 3px 3px rgb(255, 83, 126);
+            height: 75px;
+            width: 400px;
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        НГТУ, ФБ, Лабораторная 4
+    </header>
+
+    <main>
+        <div>static</div>
+        <div>static</div>
+        <div class="position-relative">relative</div>
+        <div>static</div>
+        <div>static</div>
+        <div class ="position-absolute">absolute</div>
+        <div>static</div>
+        <div>static</div>
+        <div>static</div>
+        <div>static</div>
+    </main>
+
+    <footer>
+        &copy; Лоринец Таня, ФБИ-22, 2 курс, 2024
+    </footer>
+</body>
+</html>
