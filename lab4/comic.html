@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Лоринец Татьяна Андреевна. Лабораторная работа 4.</title>
+    <link rel="stylesheet" href="../main.css">
+    <link rel="shortcut icon" href="C:\Users\Tay\OneDrive\Рабочий стол\Tay\уник\2 курс\4сем\вебка\favicon_io\favicon.ico" type="image/x-icon">
+    <link rel="icon" href="C:\Users\Tay\OneDrive\Рабочий стол\Tay\уник\2 курс\4сем\вебка\favicon_io\favicon-16x16.png">
+    <link rel="ionc" href="C:\Users\Tay\OneDrive\Рабочий стол\Tay\уник\2 курс\4сем\вебка\favicon_io\favicon-32x32.png">
+    
+    <style>              
+        .comic {               
+            position: relative;
+        }
+        .image {
+            border: none;
+            background: none;
+            position: relative;
+            left: 12%;
+            z-index: 0;                 
+            width: 250px;
+            height: 100px; 
+        }
+        
+        .comic:hover .cloud1 {
+            opacity: 1;
+            transition: 0.5s;
+        }
+        .comic:hover .cloud2 {
+            opacity: 1;
+            transition: 2.5s;
+        }
+        .comic:hover .cloud3 {
+            opacity: 1;
+            transition: 4.5s;
+        }
+        .comic:hover .cloud4 {
+            opacity: 1;
+            transition: 5s;
+        }     
+
+        .cloud1, .cloud2, .cloud3, .cloud4 {
+            position: absolute;
+            border-radius: 50%;
+            background-color: azure;
+            border: 5px solid rgb(249, 15, 62);
+            box-shadow: 2px 2px 5px rgb(244, 7, 114);
+            opacity: 0;
+        }
+        .cloud1 {
+            top: 280px;
+            left: 55%;
+            height: 15px;
+            width: 30px;
+        }
+        .cloud2 {
+            top: 260px;
+            left: 58%;
+            height: 30px;
+            width: 50px;
+        }
+        .cloud3 {
+            top: 230px;
+            left: 62%;
+            height: 50px;
+            width: 80px;
+        }
+        .cloud4 {
+            top: 200px;
+            left: 66%;
+            height: 90px;
+            width: 220px;
+            line-height: 70px;
+            color: pink;
+            font: 68px "Times New Roman";
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        НГТУ, ФБ, Лабораторная работа 4
+    </header>
+
+    <main>
+
+        <div class = "comic">
+
+            <div class="image">
+             <img src = "star.png">
+            </div>
+
+            <div class ="cloud1"></div>
+            <div class = "cloud2"></div>
+            <div class = "cloud3"></div>
+            <div class = "cloud4">Hello!</div>
+
+        </div>
+
+    </main>
+
+    <footer>
+        &copy; Лоринец Таня, ФБИ-22, 2 курс, 2024
+    </footer>
+
+</body>
+</html>
