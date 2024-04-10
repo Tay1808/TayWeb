@@ -8,13 +8,22 @@ main {
     background-color: lightblue;
     color: dodgerblue;
     font-family: Arial;
-    margin: 0px;
+    margin: 10px 20px 45px;
+    height: 0;
 }
 footer {
     background-color: lightskyblue;
     color: Blue;
+    padding: 4px;
+    font-size: 16pt;
     font-family: Arial;
-    margin: 10px;
+    margin: 0px;
+    text-align: right;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    left: 0;
+
 }
 header {
     background-color: lightskyblue;
