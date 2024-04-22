@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Лоринец Татьяна Андреевна. Лабораторная работа 5.</title>
+    <link rel="stylesheet" href="../main.css">
+    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+    <link rel="icon" href="../favicon-16x16.png">
+    <link rel="ionc" href="../favicon-32x32.png">
+    <script>
+        
+        function changeOutput() {
+            let inputA = document.getElementById('numberA');
+            let inputB = document.getElementById('numberB');
+            let inputC = document.getElementById('numberC');
+            let inputD = document.getElementById('numberD');
+
+            let a = parseInt(inputA.value); 
+            let b = parseInt(inputB.value);
+            let c = parseInt(inputC.value);
+            let d = parseInt(inputD.value); 
+            let result = (100*a + 150*b + 30*c + 70*d);
+
+            let output = document.getElementById('output');
+            output.innerHTML = "Общая сумма: " + result;
+
+        }
+    </script>
+    <style>
+        .cart {
+            font-family: Century;
+            width: 500px; 
+            height: 300px;
+            border: 3px solid; 
+            border-color: '#D2B48C';
+            border-radius: 15px;
+            text-align: center;
+            color: rgb(92, 77, 51);
+            background-color: rgb(181, 173, 160);
+        }
+
+        .cnopka {
+            margin-top: 10px;
+            cursor: pointer;
+        }
+
+        #output {
+            border: 3px solid;
+            border-color: rgb(56, 154, 246);
+            border-radius: 20px;
+            margin-top: 10px;
+            font-family: Helvetica;
+            font-size: 22px;
+            text-align: center;
+            width: 300px; 
+            height: 30px;
+            color : rgb(56, 154, 246);
+            margin-left: 90px;
+            background-color: rgb(202, 199, 192);
+            position: absolute;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        НГТУ, ФБ, Лабораторная 5
+    </header>
+
+    <main>
+        <div class="cart">
+            <h1>Корзина товаров</h1>
+            <label>Яблоки (100р\шт): <input type="number" value="3" id="numberA"></label><br>
+            <label>Киви (150р\шт): <input type="number" value="1" id="numberB"></label><br>
+            <label>Бананы (30р\шт): <input type="number" value="5" id="numberC"></label><br>
+            <label>Авокадо (70р\шт): <input type="number" value="2" id="numberD"></label><br>
+
+            <div class="cnopka">
+                <input type="button" value="Рассчитать общую стоимость" onclick="changeOutput()">
+            </div>
+            <div id="output"></div>
+        </div>
+    </main>
+
+    <footer>
+        &copy; Лоринец Таня, ФБИ-22, 2 курс, 2024
+    </footer>
+</body>
+</html>
