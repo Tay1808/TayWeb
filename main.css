@@ -5,30 +5,31 @@ body {
     margin: 0px;
 }
 main {
-    background-color: lightblue;
     color: dodgerblue;
     font-family: Arial;
-    margin: 10px 20px 45px;
-    height: 0;
+    margin: 10px 20px 150px;
+    height: 0; 
 }
 footer {
-    background-color: lightskyblue;
-    color: Blue;
+    background-color: rgb(56, 154, 246);
+    color: rgb(14, 14, 162);
     padding: 4px;
     font-size: 16pt;
-    font-family: Arial;
+    font-family: 'Times New Roman';
     margin: 0px;
     text-align: right;
     position: fixed;
     bottom: 0;
     right: 0;
     left: 0;
+    text-align: center;
 }
 header {
-    background-color: lightskyblue;
-    color: navy;
+    background-color: rgba(6, 120, 227, 0.758);
+    color: rgb(0, 16, 109);
     font-family: Arial;
     margin: 10px;
+    text-align: center;
 }
 a {
     color: green(3, 183, 168);
