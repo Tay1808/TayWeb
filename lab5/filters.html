@@ -37,7 +37,18 @@
             document.getElementById('huerotateOutput').innerText = value5;
             document.getElementById("huerotateImage").style.filter = 'hue-rotate(' + value5 + ')';
         }
-        
+
+        function invertChange() {
+            let value6 = document.getElementById('invertValue').value + '%';
+            document.getElementById('invertOutput').innerText = value6;
+            document.getElementById("invertImage").style.filter = 'invert(' + value6 + ')';
+        }
+
+        function saturateChange() {
+            let value7 = document.getElementById('saturateValue').value + '%';
+            document.getElementById('saturateOutput').innerText = value7;
+            document.getElementById("saturateImage").style.filter = 'saturate(' + value7 + ')';
+        }
     </script>
 </head>
 <body>
@@ -81,6 +92,21 @@
             <span id="huerotateOutput"></span>
        </div>
        <div><img src="cartinka.jpg" id ="huerotateImage"></div>
+
+       <div>
+            Фильтр invert:
+            <input type="range" min = "0" max = "100" value= "0" onchange="invertChange()" id="invertValue">
+            <span id="invertOutput"></span>
+        </div>
+        <div><img src="cartinka.jpg" id ="invertImage"></div>
+
+        <div>
+            Фильтр saturate:
+            <input type="range" min = "0" max = "500" value= "100" onchange="saturateChange()" id="saturateValue">
+            <span id="saturateOutput"></span>
+       </div>
+       <div><img src="monkey.jpg" id ="saturateImage"></div>
+
     </main>
 
     <footer>
