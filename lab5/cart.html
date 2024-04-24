@@ -25,8 +25,20 @@
             output.innerHTML = "Общая сумма: " + result;
 
         }
+
+        function clearCart() {
+            document.getElementById('numberA').value = "";
+            document.getElementById('numberB').value = "";
+            document.getElementById('numberC').value = "";
+            document.getElementById('numberD').value = "";
+            document.getElementById("output").textContent = "Общая сумма:";
+        }
     </script>
     <style>
+        div.card div {
+            display:block;
+        }
+
         .cart {
             font-family: Century;
             width: 500px; 
@@ -57,7 +69,6 @@
             color : rgb(56, 154, 246);
             margin-left: 90px;
             background-color: rgb(202, 199, 192);
-            position: absolute;
         }
     </style>
 </head>
@@ -69,13 +80,14 @@
     <main>
         <div class="cart">
             <h1>Корзина товаров</h1>
-            <label>Яблоки (100р\шт): <input type="number" value="3" id="numberA"></label><br>
-            <label>Киви (150р\шт): <input type="number" value="1" id="numberB"></label><br>
-            <label>Бананы (30р\шт): <input type="number" value="5" id="numberC"></label><br>
-            <label>Авокадо (70р\шт): <input type="number" value="2" id="numberD"></label><br>
+            <label>Яблоки (100р\шт): <input type="number"  min="0" placeholder="введите количество" id="numberA"></label><br>
+            <label>Киви (150р\шт): <input type="number"  min="0" placeholder="введите количество" id="numberB"></label><br>
+            <label>Бананы (30р\шт): <input type="number"  min="0" placeholder="введите количество" id="numberC"></label><br>
+            <label>Авокадо (70р\шт): <input type="number"  min="0" placeholder="введите количество" id="numberD"></label><br>
 
             <div class="cnopka">
                 <input type="button" value="Рассчитать общую стоимость" onclick="changeOutput()">
+                <input type="button" value="Очистить" onclick="clearCart()">
             </div>
             <div id="output"></div>
         </div>
