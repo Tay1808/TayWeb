@@ -32,6 +32,12 @@
             document.getElementById("grayscaleImage").style.filter = 'grayscale(' + value4 + ')';
         }
 
+        function huerotateChange() {
+            let value5 = document.getElementById('huerotateValue').value + 'deg';
+            document.getElementById('huerotateOutput').innerText = value5;
+            document.getElementById("huerotateImage").style.filter = 'hue-rotate(' + value5 + ')';
+        }
+        
     </script>
 </head>
 <body>
@@ -69,6 +75,12 @@
         </div>
         <div><img src="cartinka.jpg" id ="grayscaleImage"></div>
 
+        <div>
+            Фильтр hue-rotate:
+            <input type="range" min = "0" max = "360" value= "0" onchange="huerotateChange()" id="huerotateValue">
+            <span id="huerotateOutput"></span>
+       </div>
+       <div><img src="cartinka.jpg" id ="huerotateImage"></div>
     </main>
 
     <footer>
