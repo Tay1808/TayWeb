@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Лоринец Татьяна Андреевна. Лабораторная работа 6.</title>
+    <link rel="stylesheet" href="../main.css">
+    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+    <link rel="icon" href="../favicon-16x16.png">
+    <link rel="icon" href="../favicon-32x32.png">
+    <script>
+        function filter() {
+            let color = document.getElementById('wear-color').value 
+            let type = document.getElementById('wear-type').value 
+            let wear = document.getElementById('wear');
+            wear.width = 300;
+            wear.height = 300;
+
+            if (color == 'Красный' && type == 'Джинсы') {
+                wear.src = 'redjns.jpg';
+            }
+
+            else if (color == 'Синий' && type == 'Джинсы') {
+                wear.src = 'jns.jpg';
+            }
+
+            else if (color == 'Черный' && type == 'Джинсы') {
+                wear.src = 'blackjns.jpg';
+            }
+
+            else if (color == 'Красный' && type == 'Топ') {
+                wear.src = 'topred.jpg';
+            }
+
+            else if (color == 'Синий' && type == 'Топ') {
+                wear.src = 'blurtop.jpg';
+            }
+
+            else if (color == 'Черный' && type == 'Топ') {
+                wear.src = 'topblack.jpg';
+            }
+
+            else if (color == 'Красный' && type == 'Сумка') {
+                wear.src = 'redmus.jpg';
+            }
+
+            else if (color == 'Синий' && type == 'Сумка') {
+                wear.src = 'bluemus.jpeg';
+            }
+
+            else {
+                wear.src = 'blackmus.jpg';
+            }
+        }
+    </script>
+
+</head>
+<body>
+    <header>
+        НГТУ, ФБ, Лабораторная 6
+    </header>
+
+    <main>
+        <div>
+            Цвет одежды:
+            <select id="wear-color">
+                <option>Красный</option>
+                <option>Синий</option>
+                <option>Черный</option>
+            </select><br>
+
+            Тип одежды: 
+            <select id="wear-type">
+                <option>Джинсы</option>
+                <option>Топ</option>
+                <option>Сумка</option>
+            </select><br>
+
+            <button onclick="filter()">OK</button><br>
+
+            <img id="wear">
+        </div>
+    </main>
+
+    <footer>
+        &copy; Лоринец Таня, ФБИ-22, 2 курс, 2024
+    </footer>
+</body>
+</html>
