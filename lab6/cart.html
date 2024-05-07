@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Лоринец Татьяна Андреевна. Лабораторная работа 6.</title>
+    <link rel="stylesheet" href="../main.css">
+    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+    <link rel="icon" href="../favicon-16x16.png">
+    <link rel="ionc" href="../favicon-32x32.png">
+    <script>
+        function calculateTotal() {
+            let balance = parseInt(document.getElementById('balance').value);
+            let cart = document.querySelectorAll('.quantity');
+            let total = 0;
+            let message = document.getElementById('result');
+
+            for (let item of cart) {
+                total += parseInt(item.value) * parseInt(item.parentNode.previousElementSibling.textContent);
+            }
+
+            if (total > balance) {
+                message.innerHTML  = "Ошибка!!! У вас недостаточно денег";
+            }
+
+            else if (total === 0) {
+                message.innerHTML  = "Ошибка!!! Выберите хотя бы один товар.";
+            } 
+
+            else {
+                message.innerHTML  = "Все успешно. Итоговая сумма: " + total + " руб.";
+            }
+        }
+    </script>
+    <style>
+        table {
+            width: 100%;
+            margin-top: 20px;
+
+        }
+        th, td {
+            border: 2px solid;
+            padding: 8px;
+            text-align: center;
+            font-family: Arial;
+            font-size: 18px;
+        }
+        th {
+            background-color: rgb(254, 158, 216);
+        }
+        
+    </style>
+</head>
+<body>
+    <header>
+        НГТУ, ФБ, Лабораторная 6
+    </header>
+
+    <main>
+        <div>
+            Мой баланс (руб):
+            <input type="number" id="balance"  min="0" step="1">
+        </div>
+
+        <table id="cart">
+            <thead>
+                <tr>
+                    <th>Название товара</th>
+                    <th>Цена (руб)</th>
+                    <th>Количество</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Йогурт</td>
+                    <td>20</td>
+                    <td><input type="number" class="quantity" value="0" min="0" step="1"></td>
+                </tr>
+                <tr>
+                    <td>Сникерс белый</td>
+                    <td>100</td>
+                    <td><input type="number" class="quantity" value="0" min="0" step="1"></td>
+                </tr>
+                <tr>
+                    <td>Киви</td>
+                    <td>30</td>
+                    <td><input type="number" class="quantity" value="0" min="0" step="1"></td>
+                </tr>
+                <tr>
+                    <td>Мармелад</td>
+                    <td>50</td>
+                    <td><input type="number" class="quantity" value="0" min="0" step="1"></td>
+                </tr>
+                <tr>
+                    <td>Молоко (2,5%)</td>
+                    <td>90</td>
+                    <td><input type="number" class="quantity" value="0" min="0" step="1"></td>
+                </tr>
+                <tr>
+                    <td>Яблоко</td>
+                    <td>30</td>
+                    <td><input type="number" class="quantity" value="0" min="0" step="1"></td>
+                </tr>
+                <tr>
+                    <td>Лимонад (2л)</td>
+                    <td>100</td>
+                    <td><input type="number" class="quantity" value="0" min="0" step="1"></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <button onclick="calculateTotal()">OK</button><br>
+        <div id="result"></div>
+    </main>
+
+    <footer>
+        &copy; Лоринец Таня, ФБИ-22, 2 курс, 2024
+    </footer>
+</body>
+</html>
