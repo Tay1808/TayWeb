@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Лоринец Татьяна Андреевна. Лабораторная работа 6.</title>
+    <link rel="stylesheet" href="../main.css">
+    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+    <link rel="icon" href="../favicon-16x16.png">
+    <link rel="ionc" href="../favicon-32x32.png">
+</head>
+<body>
+    <header>
+        НГТУ, ФБ, Лабораторная 6
+    </header>
+
+    <style>
+        .color {
+            width: 240px;
+            height: 50px;
+            padding: 10px;
+            border: 3px solid rgb(204, 0, 136);
+            background-color: pink;
+            font-size: 16px;
+            font-family: 'Arial';
+            position: absolute;
+            margin: auto;
+            text-align: center;
+            color:white;
+            cursor: pointer;
+        }
+    </style>
+
+<script>
+    function changeColor(div) {
+        div.style.transition = "0.5s";
+        if (div.style.backgroundColor == 'pink') {
+            div.style.backgroundColor = 'lightgreen';
+            document.getElementById('color-name').innerHTML = 'зеленый';
+        }
+        else if (div.style.backgroundColor == 'lightgreen') {
+            div.style.backgroundColor = 'purple';
+            document.getElementById('color-name').innerHTML = 'фиолетовый'
+        }
+        else if (div.style.backgroundColor == 'purple') {
+            div.style.backgroundColor = 'orange';
+            document.getElementById('color-name').innerHTML = 'оранржевый'
+        }
+        else if (div.style.backgroundColor == 'orange') {
+            div.style.backgroundColor = 'lightblue';
+            document.getElementById('color-name').innerHTML = 'голубой'
+        }
+        else if (div.style.backgroundColor == 'lightblue') {
+            div.style.backgroundColor = 'grey';
+            document.getElementById('color-name').innerHTML = 'серый'
+        }
+        else {
+            div.style.backgroundColor = 'pink';
+            document.getElementById('color-name').innerHTML = 'розовый';
+        }
+    }
+</script>
+
+    <main>
+        <div class="color" ondblclick="changeColor(this)">
+            Цвет: <span id="color-name">розовый</span><br>
+            Сделайте двойной щелчок, чтобы сменить цвет 
+        </div>
+    </main>
+
+    <footer>
+        &copy; Лоринец Таня, ФБИ-22, 2 курс, 2024
+    </footer>
+</body>
+</html>
