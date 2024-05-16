@@ -9,7 +9,7 @@
     <link rel="icon" href="../favicon-32x32.png">
     <script>
         function addNewBlock() {
-            let newBlock = document.createElement('div')
+            let newBlock = document.createElement('div');
             newBlock.style.backgroundColor = 'pink';
             newBlock.style.height = '40px';
             newBlock.style.margin = '5px';
@@ -17,6 +17,24 @@
             newBlock.style.borderColor = 'white'; 
 
             document.querySelector('main').appendChild(newBlock);
+        }
+        function addNewBlocks() {
+            let main = document.querySelector('main');
+            let inputNumber = parseInt(document.getElementById('inputNumber').value);
+            if (!isNaN(inputNumber)) {
+                for(let i = 0; i < inputNumber; i++) {
+                    let newBlock = document.createElement('div');
+                    newBlock.style.backgroundColor = 'pink';
+                    newBlock.style.height = '40px';
+                    newBlock.style.margin = '5px';
+                    newBlock.style.border = '1px solid';
+                    newBlock.style.borderColor = 'white'; 
+                    newBlock.style.width = 200 + i * 20 + 'px';
+                    newBlock.innerHTML = `Блок № ${i+1}: 2*${i}<sup>2</sup> = ${2 *i**2}`;
+
+                    main.appendChild(newBlock);
+                }
+            }
         }
     </script>
     <style>
@@ -27,7 +45,11 @@
             text-align: center;
             width: 140px;
             height: 70px;
-            margin-left: 620px;
+            border-radius: 7px;
+        }
+        .inp {
+            width: 220px;
+            background-color: pink;
         }
     </style>
 </head>
@@ -37,7 +59,10 @@
     </header>
 
     <main>
+        <input type="number" class="inp" id="inputNumber" placeholder="Введите количество блоков">
         <button class="button" onclick="addNewBlock()">Добавить блок</button>
+        <button class="button" onclick="addNewBlocks()">Добавить блоки</button>
+
     </main>
 
     <footer>
