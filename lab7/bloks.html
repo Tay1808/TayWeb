@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Лоринец Татьяна Андреевна. Лабораторная работа 7.</title>
+    <link rel="stylesheet" href="../main.css">
+    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+    <link rel="icon" href="../favicon-16x16.png">
+    <link rel="icon" href="../favicon-32x32.png">
+    <script>
+        function addNewBlock() {
+            let newBlock = document.createElement('div')
+            newBlock.style.backgroundColor = 'pink';
+            newBlock.style.height = '40px';
+            newBlock.style.margin = '5px';
+            newBlock.style.border = '1px solid';
+            newBlock.style.borderColor = 'white'; 
+
+            document.querySelector('main').appendChild(newBlock);
+        }
+    </script>
+    <style>
+        .button {
+            background-color: rgb(255, 160, 176);
+            font-family: Arial;
+            margin: auto;
+            text-align: center;
+            width: 140px;
+            height: 70px;
+            margin-left: 620px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        НГТУ, ФБ, Лабораторная 7
+    </header>
+
+    <main>
+        <button class="button" onclick="addNewBlock()">Добавить блок</button>
+    </main>
+
+    <footer>
+        &copy; Лоринец Таня, ФБИ-22, 2 курс, 2024
+    </footer>
+</body>
+</html>
