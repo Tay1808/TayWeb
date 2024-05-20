@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Лоринец Татьяна Андреевна. Лабораторная работа 7.</title>
+    <link rel="stylesheet" href="../main.css">
+    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+    <link rel="icon" href="../favicon-16x16.png">
+    <link rel="icon" href="../favicon-32x32.png">
+    <script>
+        function getEuroExchangeRate() {
+            const url = 'https://www.cbr-xml-daily.ru/daily_json.js';
+            fetch(url)
+                .then(function(response){
+                    return response.json();
+                })
+                .then(function(json) {
+                    const currentDate = json.Date;
+                    const euroRate = json.Valute.EUR.Value.toFixed(2);
+                    const prevEuroRate = json.Valute.EUR.Previous.toFixed(2);
+                    const rateDiff = (euroRate - prevEuroRate).toFixed(2);
+                    let rateChange;
+                    if(rateDiff > 0) {
+                        rateChange = 'поднялся';
+                    } 
+                    else {
+                        rateChange = 'опустился';
+                    }
+
+                    const message = `
+                        <div>
+                            <p>Дата запроса: ${currentDate}</p>
+                            <p>Текущий курс евро: ${euroRate}</p>
+                            <p>Курс за прошлую дату: ${prevEuroRate}</p>
+                            <p>Разница с предыдущим значением: ${Math.abs(rateDiff)} (${rateChange})</p>
+                            <p><a href="https://www.cbr-xml-daily.ru/">Источник данных</a></p>
+                        </div>
+                    `;
+                    document.getElementById('info').innerHTML = message;
+                })
+                .then(function(error) {
+                    console.log('Произошла ошибка', error);
+                })
+                
+            let button = document.querySelector('button');
+            button.style.display = 'none';
+                
+        }
+
+    </script>
+</head>
+<body>
+    <header>
+        НГТУ, ФБ, Лабораторная 7
+    </header>
+
+    <main>
+        <button onclick = 'getEuroExchangeRate()'>Получить курс евро</button>
+      <div style="border: 4px dotted rgb(0, 111, 196);background-color: rgb(32, 85, 193);color: white; padding: 10px; margin: 10px; font-size: 16pt; font-family: 
+      'Times New Roman'; text-align: center;" id="info"></div>
+    </main>
+
+    <footer>
+        &copy; Лоринец Таня, ФБИ-22, 2 курс, 2024
+    </footer>
+</body>
+</html>
