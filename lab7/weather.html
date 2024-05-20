@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Лоринец Татьяна Андреевна. Лабораторная работа 7.</title>
+    <link rel="stylesheet" href="../main.css">
+    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+    <link rel="icon" href="../favicon-16x16.png">
+    <link rel="icon" href="../favicon-32x32.png">
+    <script>
+        function getWeather() {
+            const url = 'https://api.open-meteo.com/v1/forecast?latitude=55.0415&longitude=82.9346&hourly=temperature_2m&timezone=Asia%2FBangkok';
+            fetch(url)
+                .then(function(response) {
+                  return response.json();
+                })
+                .then(function(json) {
+                    console.log(json);
+
+                    const temperature = [json.hourly.temperature_2m[8], json.hourly.temperature_2m[12], json.hourly.temperature_2m[20]];
+                    const days = [json.hourly.time[8], json.hourly.time[12], json.hourly.time[20]];
+
+                    const message = `
+                        <div>
+                            <p>Прогноз погоды в 8 часов утра, 12 часов дня и 20 часов вечера: ${days}</p>
+                            <p>Температура: ${temperature}</p>
+                        </div>
+                    `;
+                    document.getElementById('temperatureS').innerHTML = message;
+                    
+
+                    let button = document.querySelector('button');
+                    button.style.display = 'none';
+                })
+           
+        }
+        
+    </script>
+        <style>
+            .color {
+                border: 5px solid rgb(239, 5, 99);
+                border-radius: 25px;
+                background-color: pink;
+                margin-left: 620px;
+                color: rgb(253, 8, 130);
+                width: 200px;
+                height: 100px;
+                font-size: 16pt;
+
+            }
+            .mEssage {
+                border: 2px dotted rgb(255, 9, 128);
+                text-align: center;
+                font-size: 15pt;
+                font-family: Helvetica;
+                background-color: rgb(253, 96, 201);
+                color: white;
+                border-radius: 45px;
+            }
+        </style>
+</head>
+<body>
+    <header>
+        НГТУ, ФБ, Лабораторная 7
+    </header>
+
+    <main>
+        <button class= 'color' onclick = 'getWeather()'>Температура</button>
+        <div class="mEssage" id="temperatureS"></div>
+    </main>
+
+    <footer>
+        &copy; Лоринец Таня, ФБИ-22, 2 курс, 2024
+    </footer>
+</body>
+</html>
