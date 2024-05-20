@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Лоринец Татьяна Андреевна. Лабораторная работа 7.</title>
+    <link rel="stylesheet" href="../main.css">
+    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+    <link rel="icon" href="../favicon-16x16.png">
+    <link rel="icon" href="../favicon-32x32.png">
+    <script>
+        function showKurs() {
+            const dates = ['06.05.2024', '07.05.2024', '08.05.2024', '10.05.2024', '13.05.2024', '14.05.2024', '15.05.2024', '16.05.2024'];
+            const price = [1227.40, 1235.60, 1225.00, 1230.60, 1233.20, 1220.00, 1220.80, 1224.00];
+
+            let table = document.getElementById('kurs-table');
+
+            for (let i = 0; i < dates.length; i++) {
+                let tr = document.createElement('tr');
+                let tdDate = document.createElement('td');
+                let tdPrice = document.createElement('td');
+                let tdDiff = document.createElement('td');
+
+                tdDate.innerText = dates[i];
+                tdPrice.innerText = price[i];
+
+                if (i > 0) {
+                    let diff = price[i] - price[i - 1];
+                    tdDiff.innerText = diff.toFixed(2);
+                } else {
+                    tdDiff.innerText = '-';
+                }
+
+                tr.appendChild(tdDate);
+                tr.appendChild(tdPrice);
+                tr.appendChild(tdDiff);
+                table.appendChild(tr);
+            }
+
+            let sum = 0;
+            for (let i = 0; i < price.length; i++) {
+                sum += price[i];
+            }
+            let average = sum / price.length;
+            let maxPrice = Math.max(...price);
+            let minPrice = Math.min(...price);
+
+            let detail = document.getElementById('stocks-detail');
+            detail.innerHTML = `Средняя стоимость акции: ${average.toFixed(2)} <br> Максимальная стоимость акции: ${maxPrice} <br> Минимальная стоимость акции: ${minPrice}`;
+
+            let button = document.getElementById('kurs-button');
+            button.style.display = 'none';
+
+        }
+    </script>
+</head>
+<body>
+    <header>
+        НГТУ, ФБ, Лабораторная 7
+    </header>
+
+    <main>
+        <button id="kurs-button" onclick="showKurs()">Курс акций Новотэк</button>
+        <table border="1" id="kurs-table"></table>
+        <div id="stocks-detail"></div>
+    </main>
+
+    <footer>
+        &copy; Лоринец Таня, ФБИ-22, 2 курс, 2024
+    </footer>
+</body>
+</html>
