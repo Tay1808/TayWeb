@@ -104,6 +104,40 @@
                 main.appendChild(newBlock);
             }
         }   
+
+        function createCircles() {
+            let main = document.querySelector('main');
+            let circle = document.getElementById('circleNum').value;
+            for(let i = circle; i>0; i--) {
+                let newBlock = document.createElement('div');
+                newBlock.style.width = '40px';
+                newBlock.style.border = '1px solid'; 
+                if (i % 2 === 0) {
+                    newBlock.style.backgroundColor = 'pink';
+                } 
+                else {
+                    newBlock.style.backgroundColor = 'red';
+                }
+                newBlock.style.height = '40px';
+                newBlock.style.border = '8px dotted';
+                newBlock.style.borderColor = "white";
+                newBlock.style.margin = '5px'; 
+                newBlock.style.borderRadius = "50%";
+                newBlock.style.textAlign = 'center';
+                newBlock.style.padding = '40px';
+                newBlock.style.paddingTop = '30px';
+                newBlock.style.color = 'white';
+                newBlock.style.display = 'inline-block';
+                newBlock.style.textAlign = 'center';
+                newBlock.style.fontSize = '30px';
+
+                
+
+                newBlock.innerHTML = `${i}`;
+
+                main.appendChild(newBlock);
+            }
+        }
     </script>
     <style>
         .button {
@@ -150,6 +184,14 @@
             border-radius: 20%;
             margin-left: 15px;
         }
+
+        .dot {
+            background-color: rgb(206, 122, 248);
+            color: white;
+            border: 2px solid rgb(204, 18, 255);
+            border-radius: 20%;
+            margin-left: 15px;
+        }
     </style>
 </head>
 <body>
@@ -163,7 +205,9 @@
         <input type="number" class="inp" id="inputNumber" placeholder="Введите кол-во блоков">
         <button class="btn" onclick="add20_50()">20 => 50</button>
         <button class="twbtn" onclick="add10_80()">10 => -80</button>
-        <button class="newbt" onclick="changeOpacity()">0% => 100%</button><br>
+        <button class="newbt" onclick="changeOpacity()">0% => 100%</button>
+        <input class="dot" type="number" min = '1' id="circleNum" placeholder="Введите количество кругов">
+        <button class="dot" onclick="createCircles()">Цветные круги</button><br>
     </main>
 
     <footer>
