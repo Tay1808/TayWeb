@@ -1,0 +1,78 @@
+body {
+    background-color: rgb(234, 234, 234);
+    color: rgb(255, 149, 0);
+    font-family: Arial;
+    margin: 0px;
+}
+main {
+    color: rgb(247, 132, 24);
+    font-family: Arial;
+    margin: 10px 20px;
+    margin-top: 100px;
+}
+footer {
+    background-color: rgb(51, 113, 247);
+    color: white;
+    padding: 4px;
+    font-size: 16pt;
+    font-family: 'Courier';
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    text-align: center;
+
+}
+header {
+    background-color: rgba(60, 144, 240, 0.742);
+    color: rgb(252, 183, 8);
+    font-family: 'Courier New', Courier, monospace;
+    margin: 5px;
+    position: fixed;
+    top: 0;
+    left: 150px;
+    right: 400px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 22px;
+    height: 200px;
+}
+a {
+    color: rgb(0, 47, 255);
+    text-decoration: none;
+    transition: 1s 2S;
+}
+a:link {
+    color: rgb(255, 153, 19);
+    text-decoration: underline;
+}
+a:visited {
+    color: rgb(255, 153, 0);
+    text-shadow: 5px 5px 8px rgb(251, 143, 61);
+    font-weight: bold;
+    text-decoration: underline;
+}
+a:hover {
+    color: rgb(0, 60, 255);
+    text-shadow: 5px 5px 8px rgb(10, 112, 255);
+    font-weight: bold;
+    text-decoration: underline;
+    transition: 0.3s;
+}
+a:active {
+    color: rgb(69, 17, 255);
+    opacity: 0.3;
+}
+div.menu { 
+    border: 5px solid #cdc3a6b9; 
+    border-radius: 5px;
+    width: 450px;
+    margin: 0 auto;
+    background-color: #1e64fb30;
+}
+div.menu:hover {
+    background-color: #ff8c00;
+    box-shadow: 0 0 20px #ffc004e9;
+    border-radius: 30px;
+}
+
