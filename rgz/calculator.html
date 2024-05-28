@@ -10,77 +10,100 @@
 </head>
 <script>
     function convert() {
-        const rubAmountInput = document.getElementById('rubInput');
-        const usdAmountInput = document.getElementById('usdInput');
-        const selectedRub = rubAmountInput.value;
-        const selectedUsd = usdAmountInput.value;
-        const rubAmount = Number(rubAmountInput.value);
-        const dolAmount = Number(usdAmountInput.value);
-
-
-
         const url = 'https://www.cbr-xml-daily.ru/daily_json.js';
         fetch(url)
             .then(function(response){
                 return response.json();
             })
             .then(function(json) {
-                const currentDate = json.Date;
-                const rubRate = json.Valute.RUB.Value.toFixed(2);
-                const usdRate = json.Valute.USD.Previous.toFixed(2);
+                let kol = json.Valute.NOK.Value;
+                let denom = json.Valute.NOK.Nominal;
 
-                let convertedAmount;
-                let convertedCurrency;
+                let quantity = document.getElementById('quantity').value;
+                let from = document.getElementById('from').value;
+                let to = document.getElementById('to').value;
+                let result = document.getElementById('result');
 
-                if (selectedRub) {
-                    convertedAmount = rubAmount / usdRate;
-                    convertedCurrency = 'USD';
-                } else {
-                    convertedAmount = usdAmount * rubRate;
-                    convertedCurrency = 'RUB';
+                if (from == 'NOK' && to == 'RUB') {
+                    let output = (quantity * kol) / denom;
+                    result.innerText = output.toFixed(2) + "Рублей";
+                } 
+                else if (from == 'RUB' && to == 'NOK') {
+                    let output = (quantity / kol) * denom;
+                    result.innerText = output.toFixed(2) + "Крон";
                 }
-
-                const message = `
-                    <div>
-                        <p>Дата запроса: ${currentDate}</p>
-                        <p>Конвертированная сумма: ${convertedAmount.toFixed(2)} ${convertedCurrency}</p>
-                        <p><a href="https://www.cbr-xml-daily.ru/">Источник данных</a></p>
-                    </div>
-                `;
-                document.getElementById('result').innerHTML = message;
-
-                let button = document.querySelector('button');
-                button.style.display = 'none';
-            })
+                else {
+                    result.innerText = 'Ошибка! Выбраны одинаковые влаюты!';
+                }
+            });
     }        
             
                     
 </script>
 <style>
-    p {
-        text-align: center;
-    }
+   .display1 {
+    width: 450px;
+    height: 470px;
+    margin-left: 500px;
+    box-shadow: 0 0 20px rgba(254, 132, 2, 0.847);
+    text-align: center;
+    
+   }
+
+   .kn {
+    width: 170px;
+    height: 50px;
+    border: 1px solid orange;
+    border-radius: 30%;
+    background-color: rgb(253, 253, 253);
+    color: rgb(255, 153, 0);
+    margin-top: 5px;
+   }
+   .itog {
+    height: 30px;
+    border: 3px solid black;
+    color: black;
+    margin-left: 30px;
+    margin-right: 30px;
+    background-color: white;
+    border-radius: 10%;
+    padding-top: 15px;
+   }
 </style>
 <body>
     <header>
-        <ul>
-            <li><a href="glav.html">Главная страница.</a></li>
-            <li><a href="ptb.html">О компании.</a></li>
-            <li><a href="news.html">Новости.</a></li>
-            <li><a href="contacts.html">Контактная информация.</a></li>
-            <li><a href="video.html">Видио.</a></li>
-            <li><a href="calculator.html">Курс валют.</a></li>
-        </ul>
+        <a href="glav.html">Главная страница.</a>
+        <a href="ptb.html">О компании.</a>
+        <a href="news.html">Новости.</a>
+        <a href="contacts.html">Контактная информация.</a>
+        <a href="video.html">Видео.</a>
+        <a href="calculator.html">Курс валют.</a>
     </header>
 
     <main>  
-       </div>
-       <h1>Курс валют: калькулятор</h1>
+        <div class="display1">
+            <h1>Конвертирование валюты</h1>
+            <p>Введите сумму для конвертации:</p>
+            <input type="number" id="quantity" min="0" oninput="value = Math.max(value,0)" placeholder="Введите вашу сумму">
 
-       <input type="number" id="rubInput" placeholder="Сумма в рублях">
-       <input type="number" id="usdInput" placeholder="Сумма в долларах">
-       <button onclick="convert()">Конвертировать</button>
-       <div id="result"></div>
+            <p>Выберите валюту из которой необходимо конвертировать</p>
+
+            <select class="kn" id="from">
+                <option value="NOK">Норвежская крона</option>
+                <option value="RUB">Российский рубль</option>
+            </select><br>
+
+            <p>Выберите валюту в которую необходимо конвертировать</p>
+
+            <select class="kn" id="to">
+                <option value="NOK">Норвежская крона</option>
+                <option value="RUB">Российский рубль</option>
+            </select><br>
+
+            <button class="kn" onclick="convert()">Конвертировать</button>
+
+            <p class="itog" id="result">Результат:</p>
+        </div>
     </main>
 
     <footer>
