@@ -20,4 +20,12 @@ function showDate() {
     out.innerHTML += "Дата и время для локали Германии : " + germanDate + "<br>"; 
     out.innerHTML += "Дата и время для локали Франции: " + franceDate;
 
+    let additionalInfo = document.getElementById('additional-info');
+    let daysOfWeek = ['воскресенье', 'понедельник', 'вторник', 'среда', 'четверг', 'пятница', 'суббота'];
+    additionalInfo.innerHTML += `
+        Текущий год: ${today.getFullYear()}<br>
+        Текущий месяц: ${today.toLocaleString('ru-RU', { month: 'long' })}<br>
+        Текущая дата: ${today.getDate()}<br>
+        День недели: ${daysOfWeek[today.getDay()]}
+    `;
 }
