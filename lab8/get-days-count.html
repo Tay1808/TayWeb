@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Лоринец Татьяна Андреевна. Лабораторная работа 7.</title>
+    <link rel="stylesheet" href="../main.css">
+    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+    <link rel="icon" href="../favicon-16x16.png">
+    <link rel="icon" href="../favicon-32x32.png">
+    <script src="get-days-count.js"></script>
+</head>
+<style>
+    div {
+        border: 1px solid blue; 
+        height: 50px;
+        background-color: white;
+        color: darkblue;
+        text-align: center;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        margin-left: 50px;
+        margin-right: 50px;
+        margin-top: 30px;
+        padding-top: 15px;
+        box-shadow: 2px 2px 15px rgba(8, 8, 255, 0.847);
+        font-size: 20px;
+    }
+    .clear {
+        border: 2px solid darkblue;
+        background-color: rgb(159, 205, 251);
+        color: darkblue;
+        border-radius: 5%;
+    }
+</style>
+<body>
+    <header>
+        НГТУ, ФБ, Лабораторная 7
+    </header>
+
+    <main>
+        <div class="date-form">
+            <label for="input-date">Дата рождения: </label>
+            <input  class="clear" type="date" id="input-date">
+            <button class="clear" onclick="showDaysCount()">Показать число дней</button>
+            <button class="clear" onclick="clearFields()">Очистить</button>
+        </div>
+        <div id="days-count-result"></div> 
+    </main>
+
+    <footer>
+        &copy; Лоринец Таня, ФБИ-22, 2 курс, 2024
+    </footer>
+</body>
+</html>
