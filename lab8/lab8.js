@@ -3,13 +3,10 @@ function showDate() {
     let today = new Date();
     let russianDate = today.toLocaleString('ru-RU');
     let spain = new Date();
-    spain.setHours(14);
     let spanishDate = spain.toLocaleString('es-ES');
     let german = new Date();
-    german.setHours(14);
     let germanDate = german.toLocaleString('de-DE');
     let france = new Date();
-    france.setHours(14);
     let franceDate = france.toLocaleString('fr-FR');
     let egypt = new Date();
     let egyptDate = egypt.toLocaleString('ar-EG'); 
@@ -20,11 +17,12 @@ function showDate() {
     out.innerHTML += "Дата и время для локали Германии : " + germanDate + "<br>"; 
     out.innerHTML += "Дата и время для локали Франции: " + franceDate;
 
-    let additionalInfo = document.getElementById('additional-info');
+    let additionalInf = document.getElementById('additional');
     let daysOfWeek = ['воскресенье', 'понедельник', 'вторник', 'среда', 'четверг', 'пятница', 'суббота'];
-    additionalInfo.innerHTML += `
+    let months = ['Январь', 'Февраль', 'Март', 'Апрель', 'Май', 'Июнь', 'Июль', 'Август', 'Сентябрь', 'Октябрь', 'Ноябрь', 'Декабрь'];
+    additionalInf.innerHTML += `
         Текущий год: ${today.getFullYear()}<br>
-        Текущий месяц: ${today.toLocaleString('ru-RU', { month: 'long' })}<br>
+        Текущий месяц: ${months[today.getMonth()]}<br>
         Текущая дата: ${today.getDate()}<br>
         День недели: ${daysOfWeek[today.getDay()]}
     `;
