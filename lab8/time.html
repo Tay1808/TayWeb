@@ -22,10 +22,37 @@
         padding-top: 23px;
    }
    #seconds {
-    color:  rgb(103, 45, 249);
-    font-size: 90px;
-    margin-left: 700px;
-    margin-top: 200px;
+        color:  rgb(103, 45, 249);
+        font-size: 90px;
+        margin-left: 670px;
+        margin-top: 50px;
+   }
+   #clock-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+    #clock {
+        width: 200px;
+        height: 200px;
+        border: 5px dotted rgb(103, 45, 249);
+        border-radius: 50%;
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: rgba(105, 117, 254, 0.745);
+    }
+   #second-hand {
+        width: 4px;
+        height: 90px;
+        background: rgb(255, 0, 153);
+        position: absolute;
+        bottom: 50%;
+        transform-origin: bottom;
+        transform: rotate(0deg);
+        transition: transform 1s linear;
    }
 </style>
 <body onload="showTime()">
@@ -34,8 +61,12 @@
         <div id="time">00:00:00</div>
     </header>
 
-    <main>
+    <main onload="showhand()">
         <div id="seconds">00</div>
+        <div id="clock-container">
+        <div id="clock">
+            <div id="second-hand"></div>
+        </div>
     </main>
 
     <footer>
