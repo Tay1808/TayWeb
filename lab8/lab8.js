@@ -20,20 +20,26 @@ function showDate() {
     let additionalInf = document.getElementById('additional');
     let daysOfWeek = ['воскресенье', 'понедельник', 'вторник', 'среда', 'четверг', 'пятница', 'суббота'];
     let months = ['Январь', 'Февраль', 'Март', 'Апрель', 'Май', 'Июнь', 'Июль', 'Август', 'Сентябрь', 'Октябрь', 'Ноябрь', 'Декабрь'];
-    additionalInf.innerHTML += `
+    additionalInf.innerHTML = `
         Текущий год: ${today.getFullYear()}<br>
         Текущий месяц: ${months[today.getMonth()]}<br>
         Текущая дата: ${today.getDate()}<br>
         День недели: ${daysOfWeek[today.getDay()]}
     `;
 }
+
 function showDayOfWeek() {
     let day = document.getElementById('input-day').value;
     let month = document.getElementById('input-month').value - 1;
     let year = document.getElementById('input-year').value;
-    let date = new Date(year, month, day);
-    let daysOfWeek = ['воскресенье', 'понедельник', 'вторник', 'среда', 'четверг', 'пятница', 'суббота'];
-    let dayOfWeek = daysOfWeek[date.getDay()];
-    let resultDiv = document.getElementById('day-of-week-result');
-    resultDiv.innerHTML = `День недели: ${dayOfWeek}`;
+
+    if(day && month >= 0 && year) {
+        let date = new Date(year, month, day);
+        let daysOfWeek = ['воскресенье', 'понедельник', 'вторник', 'среда', 'четверг', 'пятница', 'суббота'];
+        let dayOfWeek = daysOfWeek[date.getDay()];
+        let resultDiv = document.getElementById('day-of-week-result');
+        resultDiv.innerHTML = `День недели: ${dayOfWeek}`;
+    } else {
+        alert('Пожалуйста, введите корректные значения даты.');
+    }
 }
